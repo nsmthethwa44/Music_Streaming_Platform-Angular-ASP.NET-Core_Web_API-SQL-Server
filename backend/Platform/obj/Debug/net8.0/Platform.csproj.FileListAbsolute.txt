@@ -156,3 +156,4 @@ C:\Users\user\Desktop\Programming\Web Design\Angular\Web Apps\Music Streamer\bac
 C:\Users\user\Desktop\Programming\Web Design\Angular\Web Apps\Music Streamer\backend\Platform\obj\Debug\net8.0\Platform.pdb
 C:\Users\user\Desktop\Programming\Web Design\Angular\Web Apps\Music Streamer\backend\Platform\obj\Debug\net8.0\Platform.genruntimeconfig.cache
 C:\Users\user\Desktop\Programming\Web Design\Angular\Web Apps\Music Streamer\backend\Platform\obj\Debug\net8.0\ref\Platform.dll
+C:\Users\user\Desktop\Programming\Web Design\Angular\Web Apps\Music Streamer\backend\Platform\obj\Debug\net8.0\Platform.sourcelink.json
