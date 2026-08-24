@@ -1,0 +1,50 @@
+<header class="header">
+    <div class="content">
+
+        <div class="menu-box" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search songs, artists, albums, podcasts..." class="textBox">
+        </div>
+
+        <div class="user">
+            <div class="icons">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <!-- logged in user-->
+            <div class="info" *ngIf="loggedInUser | async as user; else loggedOut">
+                <img [src]="getImageUrl(user.profileImageUrl)" [alt]="user.name" class="img-box">
+                <div class="details">
+                    <h3 class="name">{{ user.name }}</h3>
+                    <span class="role">{{ user.role }}</span>
+                </div>
+            </div>
+
+            <!-- not logged in -->
+            <ng-template #loggedOut>
+                <div class="info" (click)="showLogin()">
+                    <img src="assets\img\user.jpg" alt="Account" class="img-box">
+                    <div class="details">
+                        <h3 class="name">Music <span>Flow</span></h3>
+                        <span class="role">Account</span>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</header>
+
+
+<!-- auth -->
+<app-login
+    [isVisible]="isLoginVisible"
+    (switchToRegister)="showRegister()">
+</app-login>
+
+<app-register
+    [isVisible]="isRegisterVisible"
+    (switchToLogin)="showLogin()">
+</app-register>

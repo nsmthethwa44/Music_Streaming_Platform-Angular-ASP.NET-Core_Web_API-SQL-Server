@@ -1,0 +1,44 @@
+<div class="form-wrapper" *ngIf="isVisible">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="title">
+            <i class="fa-solid fa-music"></i>
+            <h2>MusicFlex</h2>
+            <p>Create your MusicFlex account.</p>
+        </div>
+
+        <div class="close" (click)="closeRegister()"> <i class="fa-solid fa-xmark"></i></div>
+
+        <!-- ACCOUNT TYPE SELECTION -->
+        <div class="account-type" *ngIf="!registrationType">
+            <div class="types">
+                <h3>Create Account</h3>
+            <p>Choose your account type.</p>
+            <div class="buttons">
+                <button type="button" class="btn" (click)="selectRegistrationType('Listener')"><i class="fa-solid fa-headphones"></i>Register as Listener </button>
+                <button  type="button" class="btn" (click)="selectRegistrationType('Artist')"><i class="fa-solid fa-microphone"></i>Register as Artist </button>
+            </div>
+            </div>
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+        <div class="input-box"*ngIf="registrationType">
+            <div class="inputs">
+                <h3>Register as {{ registrationType }}</h3>
+
+                <label>Name <input type="text" class="textBox" formControlName="name" placeholder="Name" autocomplete="name"></label>
+                <label>Email<input type="email" class="textBox" formControlName="email" placeholder="Email" autocomplete="email"></label>
+                <label>Password <input type="password" class="textBox" formControlName="password" placeholder="Password" autocomplete="new-password"></label>
+                <label>Profile Image <input type="file" class="textBox" accept="image/*" (change)="onProfileImageSelected($event)"></label>
+
+                <div class="buttons">
+                    <button type="submit" class="btn" [disabled]="registerForm.invalid"><i class="fa-solid fa-user-plus"></i>Register</button>
+                    <button type="button" class="btn change-type" (click)="changeRegistrationType()">Change Account Type</button>
+                </div>
+
+                <p>Already have an account?<span (click)="showLogin()">Sign In</span></p>
+            </div>
+        </div>
+    </form>
+
+</div>

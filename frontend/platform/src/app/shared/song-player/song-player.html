@@ -1,0 +1,64 @@
+<audio #audio (timeupdate)="onTimeUpdate()" (loadedmetadata)="onLoadedMetadata()" (ended)="onEnded()"></audio>
+
+<div class="song-player">
+  <div class="container">
+  <!-- song info-->
+  <div class="info">
+    <ng-container *ngIf="playerService.currentSong$ | async as song; else placeholder">
+      <img [src]="getAudioUrl(song.coverImageUrl)" [alt]="song.title">
+
+      <div class="details">
+        <h3 class="music-title">{{ song.title }}</h3>
+        <p class="music-subtitle">{{ song.artistName }}</p>
+      </div>
+    </ng-container>
+
+    <!-- placeholder info-->
+    <ng-template #placeholder>
+      <img src="assets/img/user.jpg" alt="No song selected">
+      <div class="details">
+        <h3>Music Title</h3>
+        <p>Select a song to start listening</p>
+      </div>
+    </ng-template>
+
+    <div class="icons">
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-download"></i>
+    </div>
+  </div>
+
+
+  <!-- controls -->
+  <div class="controls">
+    <div class="icons">
+      <i class="fa-solid fa-shuffle"></i>
+      <button type="button" (click)="previousSong()" [disabled]="!(playerService.currentSong$ | async)"><i class="fa-solid fa-backward-step"></i></button>
+
+      <!--  play / pause -->
+      <button type="button" [disabled]="!(playerService.currentSong$ | async)" (click)="togglePlay()">
+        <i class="fa-solid" [class.fa-circle-play]=" !(playerService.isPlaying$ | async)" [class.fa-circle-pause]=" playerService.isPlaying$ | async"></i>
+      </button>
+
+        <button type="button" (click)="nextSong()" [disabled]="!(playerService.currentSong$ | async)"><i class="fa-solid fa-forward-step"></i></button>
+        <i class="fa-solid fa-repeat"></i>
+    </div>
+
+    <!-- progress bar -->
+    <div class="progress-bar">
+        <span class="timer">{{formatTime((playerService.currentTime$ | async) || 0)}}</span>
+      <input type="range" class="bar" min="0" [max]="(playerService.duration$ | async) || 0" [value]="(playerService.currentTime$ | async) || 0" (input)="seek($event)">
+      <span class="duration">{{formatTime((playerService.duration$ | async) || 0)}}</span>
+    </div>
+  </div>
+
+  <!-- right controls -->
+  <div class="filter-controls">
+    <i class="fa-solid fa-rss"></i>
+    <i class="fa-solid fa-sliders"></i>
+    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-down-left-and-up-right-from-center"></i>
+  </div>
+
+  </div>
+</div>

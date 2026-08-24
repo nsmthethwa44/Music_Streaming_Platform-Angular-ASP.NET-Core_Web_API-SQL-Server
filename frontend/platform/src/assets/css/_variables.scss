@@ -1,0 +1,35 @@
+@font-face {
+    font-family: --Montserrat-Black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: --DMSans-Regular;
+    src: url(../fonts/DMSans-Regular.ttf);
+}
+
+:root{
+    --fsp: .8rem;
+    --fsh3: 1rem;
+    --fsh2: 2rem;
+
+    --ffText: --DMSans-Regular;
+    --ffHeading: --Montserrat-Black;
+
+    --white: #fff;
+    --primary-color: #7d00f1;
+     --primary-gradient: linear-gradient(135deg, #7d00f1, #c026ff,#9b2cff
+    );
+    --secondary-color: #fff;
+    --whiteIsh: #f9fbfc;
+    --black: #334155;
+    --textColor: #9b9999;
+    --green: #1b9403;
+    --danger: #d13e3e;
+
+    // --boxShadow: 0 0 10px 5px rgba(207, 204, 204, 0.1);
+    // --boxShadow:  0 4px 20px rgba(0, 0, 0, 0.12);
+    --boxShadow: 0 0 0 1px rgba(207, 204, 204, 0.5);
+    --transition: all 400ms ease;
+    --border: 1px solid rgba(207, 204, 204, 0.4);
+}

@@ -1,0 +1,79 @@
+<div class="overview-content">
+
+    <div class="container">
+        <!-- creator banner  -->
+            <div class="creator-banner">
+                <div class="text">
+                    <span>Lorem Creator Studio</span>
+                    <h1>Artist Collection</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, laborum!</p>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn" (click)="openUploadSong()"><i class="fa-solid fa-upload"></i>Upload New Song</button>
+                </div>
+            </div>
+
+            <!-- stats  -->
+            <div class="stats-box">
+                <div class="box">
+                    <span>Monthly Listeners<i class="fa-solid fa-users"></i></span>
+                    <h2>23000</h2>
+                    <p><i class="fa-solid fa-chart-line"></i> 34% vs last month</p>
+                </div>
+                <div class="box">
+                    <span>Total Followers<i class="fa-solid fa-tower-cell"></i></span>
+                    <h2>6000</h2>
+                    <p><i class="fa-solid fa-chart-line"></i> 34% vs last month</p>
+                </div>
+                <div class="box">
+                    <span>Total Streams<i class="fa-solid fa-music"></i></span>
+                    <h2>230</h2>
+                    <p><i class="fa-solid fa-chart-line"></i> 34% vs last month</p>
+                </div>
+                <div class="box">
+                    <span>Royalties<i class="fa-solid fa-money-bills"></i></span>
+                    <h2>R23000</h2>
+                    <p><i class="fa-solid fa-chart-line"></i> 34% vs last month</p>
+                </div>
+            </div>
+
+            <!-- song  -->
+             <div class="songs">
+                @if (songs.length == 0) {
+                    <p>Upload your songs to show up here</p>
+                }@else {
+                    <div class="table-content">
+                    <table class="table">
+                        <thead>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Album Title</th>
+                            <th>Duration</th>
+                            <th>Genre</th>
+                            <th>Format</th>
+                            <th>Date Created</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of songs">
+                                <td><img [src]='`${getImageUrl(item.coverImageUrl)}`' alt={{item.title}}></td>
+                                <td>{{item.title}}</td>
+                                <td>{{item.albumTitle}}</td>
+                                <td>{{formatDuration(item.duration)}}</td>
+                                <td>{{item.genre}}</td>
+                                <td>{{item.audioFormat}}</td>
+                                <td>{{item.createdAt | date: "mmddyyyy"}}</td>
+                                <td><div class="icons"><i class="fa-solid fa-trash"></i></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                }
+              
+             </div>
+    </div>
+</div>
+
+<!-- upload new song  -->
+ <app-artist-upload-song [isVisible]="isVisible" (fileUploadedSuccessFully)="loadSongs()"></app-artist-upload-song>

@@ -1,0 +1,154 @@
+<div class="overview-content">
+    <div class="container">
+
+        <div class="listener-content">
+           <div class="banner">
+                <span>Lorem, ipsum dolor.</span>
+                <h1>Curated For Your Flow State</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, laudantium.</p>
+                <div class="buttons">
+                    <button class="btn">Resume Flow Mix</button>
+                    <button class="btn secondary">Explore Genres</button>
+                </div>
+           </div>
+
+           <!-- music list  -->
+           <div class="music-list">
+                <div class="heading">
+                    <h3>Continue Listening</h3>
+                    <a href="#" class="link">View All<i class="fa-solid fa-right-long"></i></a>
+                </div>
+                    @if (songs.length == 0) {
+                        <app-preloader></app-preloader>
+                    }@else {
+                         <div class="music">
+                     <div class="box" *ngFor="let item of songs.slice(0, 6)" (click)="playSong(item)" [class.active]="playerService.getCurrentSong()?.id === item.id">
+                            <div class="box-img">
+                        <img [src]="getImageUrl(item.coverImageUrl)" [alt]="item.title" class="img-box">
+                        <i class="fa-solid" [class.fa-play]="playerService.getCurrentSong()?.id !== item.id || !playerService.getIsPlaying()" [class.fa-pause]="playerService.getCurrentSong()?.id === item.id && playerService.getIsPlaying()"></i>
+                    </div>
+                    <div class="text">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.genre }}</p>
+                    </div>
+                </div>
+                </div>
+                    }
+           </div>
+
+
+           <!-- playlist  -->
+           <app-playlist></app-playlist>
+
+           <!-- featured albums  -->
+            <div class="albums">
+                <div class="list-heading">
+                <div class="heading">
+                    <h3>Featured Albums</h3>
+                </div>
+
+                <a href="">Browse Catalog<i class="fa-solid fa-right-long"></i></a>
+            </div>
+
+            <div class="content">
+                <div class="box">
+                    <span class="album-title">Lorem, ipsum.</span>
+                    <div class="box-img"><img src="assets\img\img-1.jpg" alt="" class="img-box"></div>
+                    <div class="text">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, reiciendis?</p>
+                    </div>
+                </div>
+                  <div class="box">
+                     <span class="album-title">Lorem, ipsum.</span>
+                    <div class="box-img"><img src="assets\img\img-2.jpg" alt="" class="img-box"></div>
+                    <div class="text">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, reiciendis?</p>
+                    </div>
+                </div>
+                 <div class="box">
+                     <span class="album-title">Lorem, ipsum.</span>
+                    <div class="box-img"><img src="assets\img\img-3.jpg" alt="" class="img-box"></div>
+                    <div class="text">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, reiciendis?</p>
+                    </div>
+                </div>
+                 <div class="box">
+                     <span class="album-title">Lorem, ipsum.</span>
+                    <div class="box-img"><img src="assets\img\img-4.jpg" alt="" class="img-box"></div>
+                    <div class="text">
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, reiciendis?</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- artist  -->
+             <div class="artist-content">
+                <div class="heading">
+                    <h3>Popular Artist To Follow</h3>
+                    <a href="">All Artist <i class="fa-solid fa-right-long"></i></a>
+                </div>
+                <div class="artist-container">
+                    <div class="box" *ngFor="let item of users.slice(1, 4)">
+                        <div class="box-img">
+                            <img [src]="`${getImageUrl(item.profileImageUrl)}`" alt="" class="img-box">
+                            <div class="info">
+                                <h3>{{item.name}}</h3>
+                                <p>Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+
+                        <span class="follow">Follow</span>
+                    </div>
+                </div>
+             </div>
+
+             <!-- live streams  -->
+              <div class="live-stream">
+                <div class="heading">
+                    <h3>Active Live Stream</h3>
+                    <p>3 Lorem Online</p>
+                </div>
+
+                <div class="stream">
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="assets\img\img-5.jpg" alt="" class="img-box">
+                            <div class="info">
+                                <h3>Lorem, ipsum.</h3>
+                                <p>Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+                        <span class="time">45 Mins ago</span>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="assets\img\img-6.jpg" alt="" class="img-box">
+                            <div class="info">
+                                <h3>Lorem, ipsum.</h3>
+                                <p>Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+                        <span class="time">45 Mins ago</span>
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="assets\img\img-7.jpg" alt="" class="img-box">
+                            <div class="info">
+                                <h3>Lorem, ipsum.</h3>
+                                <p>Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+                        <span class="time">45 Mins ago</span>
+                    </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+<div class="upload-new-song" *ngIf="isVisible">
+    <form [formGroup]="songForm" class="form" (ngSubmit)="uploadSong()">
+        <div class="title-form">
+            <h3>Upload New Song</h3>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+
+            <i class="fa-solid fa-xmark" (click)="closeUploadSong()"></i>
+        </div>
+
+        <div class="inputs-box">
+            <div class="inputs">
+                 <label for="">Song Title: <input type="text" class="textBox" placeholder="e.g New World" formControlName="title"></label>
+           <label for="">Album / Release Title: 
+            <select name="" id="" class="textBox" formControlName="albumTitle"><option value="Single Release">Single Release</option></select>
+           </label>
+           <label for="">Genre: 
+            <select name="" id="" class="textBox" formControlName="genre">
+                <option value="R&B">R&B</option>
+                <option value="HipHop">HipHop</option>
+                <option value="Gospel">Gospel</option>
+                <option value="Maskandi">Maskandi</option>
+            </select>
+           </label>
+
+           <div class="upload-box">
+              <div class="box">
+                <label class="upload-label">
+                    <i class="fa-solid fa-upload"></i>
+                    <h3>Audio Master File (.WAV /.MP3)</h3>
+                    <input
+                        type="file"
+                        accept=".mp3,.wav,audio/mpeg,audio/wav"
+                        hidden
+                        (change)="onAudioSelected($event)"
+                    >
+                    <p *ngIf="selectedAudioFile">{{ selectedAudioFile.name }}</p>
+                    <p *ngIf="!selectedAudioFile">Click or drag a file here</p>
+                </label>
+            </div>
+            <div class="box">
+                <label class="upload-label">
+                    <i class="fa-solid fa-image"></i>
+                    <h3>Song Cover Image</h3>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        hidden
+                        (change)="onCoverSelected($event)"
+                    >
+                    <p *ngIf="selectedCoverImage">{{ selectedCoverImage.name }}</p>
+                    <p *ngIf="!selectedCoverImage">Click or drag a file here</p>
+                </label>
+            </div>
+           </div>
+
+           <div class="buttons">
+            <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i>Publish Song</button>
+           </div>
+            </div>
+        </div>
+    </form>
+</div>

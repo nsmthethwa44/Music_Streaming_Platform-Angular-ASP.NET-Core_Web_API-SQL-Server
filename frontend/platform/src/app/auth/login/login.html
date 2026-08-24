@@ -1,0 +1,32 @@
+<div class="form-wrapper" *ngIf="isVisible">
+    <form [formGroup]="form" class="form" (ngSubmit)="login()">
+        <div class="title">
+            <i class="fa-solid fa-music"></i>
+            <h2>MusicFlex</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="close" (click)="closeLogin()"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="input-box">
+            <div class="inputs">
+                <h3>Sign In Your Account</h3>
+
+                <label for="">
+                    Email: <input type="email" name="" formControlName="email" class="textBox" id="" placeholder="Email" autocomplete="email">
+                    <span class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email is required</span>
+                </label>
+                <label for="">
+                    Password: <input type="password" name="" formControlName="password" class="textBox" id="" placeholder="Password" autocomplete="current-password">
+                    <span class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Password is required</span>
+                </label>
+
+                <div class="buttons">
+                    <button type="submit" class="btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</button>
+                </div>
+
+                <p>Don't have an account? <span (click)="showRegister()">Sign Up</span></p>
+            </div>
+        </div>
+    </form>
+</div>

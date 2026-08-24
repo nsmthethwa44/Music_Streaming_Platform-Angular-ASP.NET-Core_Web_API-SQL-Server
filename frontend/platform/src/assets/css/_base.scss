@@ -1,0 +1,52 @@
+@import "./variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background: var(--whiteIsh);
+}
+
+h1, h2, h3, h3, h4, h5, h6{
+    font-family: var(--ffHeading);
+}
+
+p{
+    font-family: var(--ffText);
+    font-size: var(--fsp);
+}
+
+.btn{
+    padding: .8rem 1rem;
+    font-family: var(--ffText);
+    font-size: var(--fsp);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: .4rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    text-align: center;
+
+    &:hover{
+        color: var(--white);
+        background: var(--black);
+    }
+}
+
+.container{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}

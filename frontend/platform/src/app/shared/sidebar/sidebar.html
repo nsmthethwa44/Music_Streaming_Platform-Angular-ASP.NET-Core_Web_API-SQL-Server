@@ -1,0 +1,35 @@
+<div class="sidebar">
+    <div class="content">
+        <div class="close-box" (click)="closeSidebar()"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="logo">
+            <div class="icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <h2>Music<span>Flow</span></h2>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="navbar">
+                <ul class="nav">
+                    <li *ngFor="let link of links">
+                    <a [routerLink]="link.path"
+                        routerLinkActive="active"  
+                        [routerLinkActiveOptions]="{ exact: true }" (click)="closeSidebar()">
+                        <i [ngClass]="link.icon"></i>{{ link.label }}
+                    </a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="logout" >
+            <a href="#" (click)="logout()" *ngIf="loggedInUser | async as user; else loggedOut"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log Out</a>
+        </div>
+        <ng-template class="logout" #loggedOut>
+            <a href="#" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log In</a>
+        </ng-template>
+    </div>
+
+    
+</div>
