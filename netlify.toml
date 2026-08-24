@@ -1,5 +1,5 @@
 [build]
-  base = "cms"
+  base = "platform"
   publish = "dist/platform/browser"
   command = "npm install && npm run build"
   
