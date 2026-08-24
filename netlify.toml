@@ -1,8 +1,8 @@
 [build]
-  base = "platform"
+  base = "frontend/platform"
   publish = "dist/platform/browser"
-  command = "npm install && npm run build"
-  
+  command = "npm run build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
