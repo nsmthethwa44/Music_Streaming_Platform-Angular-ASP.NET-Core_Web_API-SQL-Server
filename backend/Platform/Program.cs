@@ -72,7 +72,7 @@ builder.Services.AddCors(options =>
         policy.AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials()
-              .WithOrigins("https://studyflowcms.netlify.app", "http://localhost:4200"));
+              .WithOrigins("https://musicflowplatform.netlify.app", "http://localhost:4200"));
 });
 
 var app = builder.Build();
