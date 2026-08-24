@@ -10,7 +10,7 @@ namespace Platform.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Artist")]
+    // [Authorize(Roles = "Artist")]
     public class SongController : ControllerBase
     {
         private readonly ISongService _service;
