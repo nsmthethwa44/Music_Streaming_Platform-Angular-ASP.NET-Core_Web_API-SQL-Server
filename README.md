@@ -108,8 +108,8 @@ Project Structure
     └── migrations
     
 Links
-Live Demo: Coming Soon
-GitHub Repository: Coming Soon
+Live Demo: https://musicflowplatform.netlify.app/
+GitHub Repository: https://github.com/nsmthethwa44/Music_Streaming_Platform-Angular-ASP.NET-Core_Web_API-SQL-Server
 
 Notes
 
