@@ -1,4 +1,4 @@
-Music Streaming Platform
+## Music Streaming Platform
 
 A full-stack music streaming platform for artists, listeners, and administrators to manage, discover, and play music.
 
@@ -13,7 +13,7 @@ The project focuses on building a complete full-stack application with authentic
 ---
 
 ## User Roles & Flows
-## Artist
+**Artist**
 - Register and log in as an artist
 - Upload songs in MP3 or WAV format
 - Upload song cover artwork
@@ -22,7 +22,7 @@ The project focuses on building a complete full-stack application with authentic
 - View uploaded songs
 - Access the Artist Dashboard
 
-## Listener
+**Listener**
 - Register and log in as a listener
 - Browse available songs
 - Select songs for playback
@@ -64,7 +64,7 @@ The project focuses on building a complete full-stack application with authentic
 
 ## Database
 - Microsoft SQL Server
-- 
+  
 ## Architecture & Security
 - JWT Authentication
 - Role-Based Access Control (RBAC)
