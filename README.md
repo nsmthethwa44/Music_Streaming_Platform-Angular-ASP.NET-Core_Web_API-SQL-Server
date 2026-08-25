@@ -29,7 +29,7 @@ The project focuses on building a complete full-stack application with authentic
 - Use the global music player
 - Access the Listener Dashboard
 
-## Features
+**Features**
 - User registration and login
 - JWT authentication
 - BCrypt password hashing
@@ -46,7 +46,7 @@ The project focuses on building a complete full-stack application with authentic
 - File storage integration
 - Tech Stack
 
-## Frontend
+**Frontend**
 - Angular
 - TypeScript
 - HTML5
@@ -55,17 +55,17 @@ The project focuses on building a complete full-stack application with authentic
 - RxJS
 - Angular Router
 
-## Backend
+**Backend**
 - ASP.NET Core Web API
 - C#
 - Entity Framework Core
 - AutoMapper
 - TagLib#
 
-## Database
+**Database**
 - Microsoft SQL Server
   
-## Architecture & Security
+**Architecture & Security**
 - JWT Authentication
 - Role-Based Access Control (RBAC)
 - BCrypt password hashing
